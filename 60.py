@@ -3,7 +3,7 @@ import tensorflow as tf
 class myCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         if(logs.get('accuracy') > 0.95):
-            print('\n정확도 95%에 도달하여 훈련을 멈춥니다.')
+            print('\n정확도 95%에 도달하여 훈련을 멈춥니다.') # 원하는 정확도에 도달하면 멈추게 하기
             self.model.stop_training = True
 
 callbacks = myCallback()
